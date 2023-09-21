@@ -2,7 +2,7 @@ import sys
 import cv2
 
 # creating tracker
-tracker = cv2.legacy.TrackerMOSSE.create()
+tracker = cv2.legacy.TrackerMOSSE_create()
 print(tracker)
 
 # loading in the video file
@@ -27,7 +27,7 @@ output = cv2.VideoWriter("output.mp4", video_codec, fps, (frame_width, frame_hei
 
 # define bounding box using the first frame
 bbox = cv2.selectROI(frame)
-
+ 
 # Initialize tracker with first frame and bounding box
 ok = tracker.init(frame, bbox)
 
